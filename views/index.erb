@@ -1,0 +1,14 @@
+<ul id="todo-list" class="unstyled">
+  <% @emails.each do |email| %>
+  <li id="<%= email[:id] %>">
+  <span class="email">
+  <%= email[:done] ? "<del>#{email[:email]}</del>" : email[:email] %>
+  </span>
+  <span class="pull-right">
+  <a href="#" class="btn done"><%= email[:done] ? "Not done" : "Done"%></a>
+  <a href="//delete<%= email[:id] %>" class="btn btn-danger">Delete</a>
+  </span>
+  </li>
+  <% end %>
+</ul>
+<a href="/new" class="btn btn-primary">Add todo email</a>
